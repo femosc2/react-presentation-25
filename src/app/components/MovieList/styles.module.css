@@ -1,0 +1,7 @@
+.myMovies {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
