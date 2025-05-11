@@ -1,3 +1,6 @@
+import React from "react";
+import styles from "./styles.module.css";
+
 const InputField = ({ placeholder, onChange, value }) => {
   return (
     <div>
@@ -6,6 +9,7 @@ const InputField = ({ placeholder, onChange, value }) => {
         onChange={onChange}
         placeholder={placeholder}
         value={value}
+        className={styles.inputField}
       />
     </div>
   );

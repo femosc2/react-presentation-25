@@ -2,16 +2,13 @@
 
 import React from "react";
 import styles from "./styles.module.css";
+import Movie from "../Movie";
 
 const MovieList = ({ movies }) => {
   return (
     <div className={styles.myMovies}>
       {movies.map((movie) => (
-        <div key={movie.Title} className="movie-item">
-          <img src={movie.Poster} alt={movie.Title} />
-          <h3>{movie.Title}</h3>
-          <p>{movie.Year}</p>
-        </div>
+        <Movie key={movie.Title} movie={movie} />
       ))}
     </div>
   );

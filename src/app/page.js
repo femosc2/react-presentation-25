@@ -10,7 +10,14 @@ import SearchResults from "./components/SearchResults";
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState([]);
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([
+    {
+      Title: "Star Wars",
+      Year: "1977",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_SX300.jpg",
+    },
+  ]);
 
   const handleSearch = async (input) => {
     const result = await getMovies(input);
@@ -29,15 +36,14 @@ export default function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
         <h1> My Movies</h1>
-        <MovieList movies={movies} className={styles.myMovies} />
+        <MovieList movies={movies} />
         <hr />
-        <hr />
-        <SearchResults movies={searchResult} addMovie={addMovie} />
         <InputField
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder={"Enter Movie"}
           value={searchTerm}
         />
+        <SearchResults movies={searchResult} addMovie={addMovie} />
       </main>
     </div>
   );
